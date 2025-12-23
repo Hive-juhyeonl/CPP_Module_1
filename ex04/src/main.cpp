@@ -6,7 +6,7 @@
 /*   By: JuHyeon <JuHyeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:21:14 by juhyeonl          #+#    #+#             */
-/*   Updated: 2025/10/11 04:55:16 by JuHyeon          ###   ########.fr       */
+/*   Updated: 2025/12/23 04:04:34 by JuHyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ void replaceAll(std::string& line, const std::string& s1, const std::string& s2)
 	}
 }
 
+// File will close automatically but what if program is complecate then, 
+// If you no longer need the file, it recommend closeing it.
+
+// File open is inside constructor of ifstream.
+// And c_str is just for trans to (char *). It's need for C++98 can take only string of C style
+// and can't take C++ style(std::string)
 bool processFile(const std::string& filename, const std::string& s1, const std::string& s2)
 {
 	std::ifstream inputFile(filename.c_str());
@@ -40,7 +46,7 @@ bool processFile(const std::string& filename, const std::string& s1, const std::
 	if (!outputFile.is_open())
 	{
 		std::cerr << "Error: Could not create file " << outputFilename << std::endl;
-		inputFile.close();
+		// inputFile.close();
 		return (false);
 	}
 	std::string line;
@@ -49,8 +55,8 @@ bool processFile(const std::string& filename, const std::string& s1, const std::
 		replaceAll(line, s1, s2);
 		outputFile << line << std::endl;
 	}
-	inputFile.close();
-	outputFile.close();
+	// inputFile.close();
+	// outputFile.close();
 	std::cout << "complete. saved >> " << outputFilename << std::endl;
 	return (true);
 }
