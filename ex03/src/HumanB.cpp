@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juhyeonl <juhyeonl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: JuHyeon <JuHyeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 14:49:45 by juhyeonl          #+#    #+#             */
-/*   Updated: 2025/10/09 15:43:38 by juhyeonl         ###   ########.fr       */
+/*   Updated: 2025/12/21 19:51:39 by JuHyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 HumanB::HumanB(std::string name)
 {
-	this->name = name;
-	this->is_armed = false;
-	std::cout << this->name <<" joined the sword." << std::endl;
+	this->_name = name;
+	this->_is_armed = false;
+	std::cout << this->_name <<" joined" << std::endl;
 }
 
 HumanB::~HumanB(void)
 {
-    std::cout << this->name << " died." << std::endl;
+    std::cout << this->_name << " died." << std::endl;
 }
 
 void HumanB::setWeapon(Weapon &weapon)
 {
-	this->weapon = &weapon;
-	this->is_armed = true;
-	std::cout << this->name << " grabbed a " << this->weapon->getType() << " to fight with." << std::endl;
+	this->_weapon = &weapon;
+	this->_is_armed = true;
+	std::cout << this->_name << " grabbed a " << this->_weapon->getType() << " to fight with." << std::endl;
 }
 
 void HumanB::attack(void)
 {
-    if (this->is_armed)
-        std::cout << this->name << " attacks with his " << this->weapon->getType() << "." << std::endl;
+    if (this->_is_armed)
+        std::cout << this->_name << " attacks with his " << this->_weapon->getType() << "." << std::endl;
     else
-        std::cout << this->name << " attacks with his sword." << std::endl;
+        std::cout << this->_name << " attacks with his sword." << std::endl;
 }

@@ -6,11 +6,11 @@
 /*   By: JuHyeon <JuHyeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 20:26:44 by JuHyeon           #+#    #+#             */
-/*   Updated: 2025/10/12 20:42:09 by JuHyeon          ###   ########.fr       */
+/*   Updated: 2025/12/23 04:34:44 by JuHyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Harl.hpp"
+#include "Harl.hpp"
 
 Harl::Harl() {}
 Harl::~Harl() {}
@@ -39,17 +39,26 @@ void	Harl::error(void)
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-void	Harl::complain(std::string level)
-{
+void Harl::complain(std::string level) {
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	void (Harl::*actions[])() = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
-	for (int i = 0; i < 4; i++)
-	{
-		if (levels[i] == level)
-		{
-			(this->*actions[i])();
-			return ;
-		}
+	int i = 0;
+
+	while (i < 4 && levels[i] != level)
+		i++;
+	switch (i) {
+		case 0:
+			this->debug();
+			// fallthrough
+		case 1:
+			this->info();
+			// fallthrough
+		case 2:
+			this->warning();
+			// fallthrough
+		case 3:
+			this->error();
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
-	std::cout << "Invalid action" << std::endl;
 }

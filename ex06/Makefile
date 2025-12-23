@@ -5,23 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: JuHyeon <JuHyeon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/12/09 20:09:43 by JuHyeon           #+#    #+#              #
-#    Updated: 2025/12/20 22:04:33 by JuHyeon          ###   ########.fr        #
+#    Created: 2025/12/23 04:22:31 by JuHyeon           #+#    #+#              #
+#    Updated: 2025/12/23 04:23:55 by JuHyeon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= zombie
-CC			= c++
-CFLAGS		= -Wall -Wextra -Werror -std=c++98 -Iincludes
-RM          = rm -rf
+NAME = harlFilter
+CC		= c++
+CFLAGS	= -Wall -Wextra -Werror -std=c++98 -Iinclude
+RM		= rm -rf
 
-SRC_DIR		= src
-OBJ_DIR		= obj
+SRC_DIR	= ./src
+OBJ_DIR	= ./obj
 
-SRC			= $(SRC_DIR)/main.cpp \
-				$(SRC_DIR)/Zombie.cpp \
-				$(SRC_DIR)/newZombie.cpp \
-				$(SRC_DIR)/randomChump.cpp
+SRC = $(SRC_DIR)/main.cpp \
+		$(SRC_DIR)/Harl.cpp
+
 OBJ = $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
 all: $(NAME)

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juhyeonl <juhyeonl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: JuHyeon <JuHyeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 16:06:08 by JuHyeon           #+#    #+#             */
-/*   Updated: 2025/12/09 20:12:34 by JuHyeon          ###   ########.fr       */
+/*   Updated: 2025/12/20 22:32:27 by JuHyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Zombie.hpp"
+#include "Zombie.hpp"
 
 Zombie::Zombie()
 {

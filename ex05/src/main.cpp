@@ -6,11 +6,11 @@
 /*   By: JuHyeon <JuHyeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 20:42:44 by JuHyeon           #+#    #+#             */
-/*   Updated: 2025/10/12 20:43:53 by JuHyeon          ###   ########.fr       */
+/*   Updated: 2025/12/23 04:09:02 by JuHyeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Harl.hpp"
+#include "Harl.hpp"
 
 int	main()
 {
